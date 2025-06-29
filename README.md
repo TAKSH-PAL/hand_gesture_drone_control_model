@@ -1,7 +1,7 @@
-🖐️ Hand Gesture Recognition for Drone Control
+Hand Gesture Recognition for Drone Control
 This project uses MediaPipe, OpenCV, and TensorFlow to recognize hand gestures in real-time from a webcam feed. Recognized gestures can be mapped to control commands for a drone (e.g., DJI Tello).
 
-📂 Folder Structure
+ Folder Structure
 
 hand_gesture_control/
 ├── data/
@@ -16,7 +16,7 @@ hand_gesture_control/
 ├── requirements.txt             # Python dependencies
 └── README.md                    # Project documentation
 
-🚀 How It Works
+ How It Works
 MediaPipe extracts 21 hand landmarks per frame.
 
 These 3D coordinates are used to train a classifier.
@@ -39,7 +39,7 @@ venv\Scripts\activate   # On Windows
 3. Install Dependencies
 
 pip install -r requirements.txt
-📸 Step 1: Collect Gesture Data
+ Step 1: Collect Gesture Data
 Run this to collect labeled landmark data for one gesture:
 
 python scripts/collect_landmarks.py
@@ -49,7 +49,7 @@ Press s to save a sample, and q to quit.
 
 Repeat for each gesture (e.g., fist, open_palm, left, right, etc.).
 
-🧠 Step 2: Train the Model
+ Step 2: Train the Model
 After collecting all gesture samples:
 
 python scripts/train_model.py
@@ -59,7 +59,7 @@ models/gesture_model_mediapipe.h5
 
 models/label_encoder.pkl
 
-🕵️ Step 3: Real-Time Gesture Detection
+ Step 3: Real-Time Gesture Detection
 Use your webcam to test the model in real-time:
 
 python scripts/realtime_predict.py
@@ -67,7 +67,7 @@ Predicted gestures will appear on the video frame.
 
 Flickering is reduced using a smoothing buffer.
 
-🛸 (Optional) Drone Control
+ (Optional) Drone Control
 If you're using a DJI Tello drone, you can extend realtime_predict.py to send commands using djitellopy:
 
 pip install djitellopy
@@ -77,5 +77,5 @@ if most_common == "left":
     tello.move_left(30)
 elif most_common == "fist":
     tello.land()
-📦 Dependencies
+ Dependencies
 Listed in requirements.txt
